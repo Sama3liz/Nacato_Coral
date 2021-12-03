@@ -10,173 +10,69 @@
     <link rel="stylesheet" href="assets/css/all.css">
     <script src="assets/js/bootstrap-datepicker.js"></script>
     <link rel="stylesheet" href="assets/css/bootstrap-datepicker3.standalone.css">
+    <script src="assets/js/loadTable.js"></script>
 </head>
 <body>
     <main>
-        
-        <!-- HEADER -->
+        <!-- Header -->
         <div class="m-2">
             <header class="d-flex flex-wrap justify-content-end py-3 mb-4 border-bottom">   
                 <ul class="nav nav-pills">
                     <li>
-                        <a href="index.html" class="btn btn-outline-primary me-md-1">
+                        <a href="index.html" class="btn btn-outline-danger me-md-1">
                             Inicio
                         </a>
                     </li>
                     <li>
-                        <a href="https://github.com/Sama3liz/Nacato_Coral" class="btn btn-outline-warning" target="_blank">
+                        <a href="https://github.com/Sama3liz/Nacato_Coral" class="btn btn-outline-secondary" target="_blank">
                             GitHub
                         </a>
                     </li>
                 </ul>
             </header>
         </div>
-        
+        <!-- ./Header -->
         <!-- TABLA -->
         <div class="container">
+            <!-- Table buttons -->
+            <div>
+                <button type="button" class="btn btn-outline-success btn-sm-2 px-2 mb-2" id="btnAddModal" data-bs-toggle="modal" data-bs-target="#modalAgregar">
+                    <i class="fa fa-plus" aria-hidden="true"></i>
+                </button>
+                <button type="submit" class="btn btn-outline-primary btn-sm-2 px-2 mb-2"  id="btnReload" onclick="loadXMLDoc()">
+                    <i class="fa fa-sync" aria-hidden="true"></i>
+                </button>
+            </div>
 
-            <!-- BTN ADD -->
-            <button type="button" class="btn btn-outline-success btn-sm-2 px-2 mb-2" id="btnAddModal" data-bs-toggle="modal" data-bs-target="#instalacionModal">
-                <i class="fa fa-plus" aria-hidden="true"></i>
-            </button>
-
-            <!-- TABLA REGISTROS -->
+            <!-- Table data -->
             <div class="table-responsive">
                 <table class="table table-striped table-sm">
-                <thead>
-                    <tr>
-                    <th scope="col">#</th>
-                    <th scope="col">Header</th>
-                    <th scope="col">Header</th>
-                    <th scope="col">Header</th>
-                    <th scope="col">Header</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                    <td>1,001</td>
-                    <td>random</td>
-                    <td>data</td>
-                    <td>placeholder</td>
-                    <td>text</td>
-                    </tr>
-                    <tr>
-                    <td>1,002</td>
-                    <td>placeholder</td>
-                    <td>irrelevant</td>
-                    <td>visual</td>
-                    <td>layout</td>
-                    </tr>
-                    <tr>
-                    <td>1,003</td>
-                    <td>data</td>
-                    <td>rich</td>
-                    <td>dashboard</td>
-                    <td>tabular</td>
-                    </tr>
-                    <tr>
-                    <td>1,003</td>
-                    <td>information</td>
-                    <td>placeholder</td>
-                    <td>illustrative</td>
-                    <td>data</td>
-                    </tr>
-                    <tr>
-                    <td>1,004</td>
-                    <td>text</td>
-                    <td>random</td>
-                    <td>layout</td>
-                    <td>dashboard</td>
-                    </tr>
-                    <tr>
-                    <td>1,005</td>
-                    <td>dashboard</td>
-                    <td>irrelevant</td>
-                    <td>text</td>
-                    <td>placeholder</td>
-                    </tr>
-                    <tr>
-                    <td>1,006</td>
-                    <td>dashboard</td>
-                    <td>illustrative</td>
-                    <td>rich</td>
-                    <td>data</td>
-                    </tr>
-                    <tr>
-                    <td>1,007</td>
-                    <td>placeholder</td>
-                    <td>tabular</td>
-                    <td>information</td>
-                    <td>irrelevant</td>
-                    </tr>
-                    <tr>
-                    <td>1,008</td>
-                    <td>random</td>
-                    <td>data</td>
-                    <td>placeholder</td>
-                    <td>text</td>
-                    </tr>
-                    <tr>
-                    <td>1,009</td>
-                    <td>placeholder</td>
-                    <td>irrelevant</td>
-                    <td>visual</td>
-                    <td>layout</td>
-                    </tr>
-                    <tr>
-                    <td>1,010</td>
-                    <td>data</td>
-                    <td>rich</td>
-                    <td>dashboard</td>
-                    <td>tabular</td>
-                    </tr>
-                    <tr>
-                    <td>1,011</td>
-                    <td>information</td>
-                    <td>placeholder</td>
-                    <td>illustrative</td>
-                    <td>data</td>
-                    </tr>
-                    <tr>
-                    <td>1,012</td>
-                    <td>text</td>
-                    <td>placeholder</td>
-                    <td>layout</td>
-                    <td>dashboard</td>
-                    </tr>
-                    <tr>
-                    <td>1,013</td>
-                    <td>dashboard</td>
-                    <td>irrelevant</td>
-                    <td>text</td>
-                    <td>visual</td>
-                    </tr>
-                    <tr>
-                    <td>1,014</td>
-                    <td>dashboard</td>
-                    <td>illustrative</td>
-                    <td>rich</td>
-                    <td>data</td>
-                    </tr>
-                    <tr>
-                    <td>1,015</td>
-                    <td>random</td>
-                    <td>tabular</td>
-                    <td>information</td>
-                    <td>text</td>
-                    </tr>
-                </tbody>
+                    <thead>
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Fecha</th>
+                            <th scope="col">Kilometraje</th>
+                            <th scope="col">Tipo de  Mantenimiento</th>
+                            <th scope="col">Taller</th>
+                            <th scope="col">Total mantenimiento</th>
+                            <th scope="col">Total repuestos</th>
+                            <th scope="col">Observaciones</th>
+                        </tr>
+                    </thead>
+                    <tbody id=body>
+                        <!-- Datos ingresados por PHP -->
+                    </tbody>
                 </table>
             </div>
         </div>
-
+        <!-- ./Table-->
     </main>
     <!-- Modal -->
-    <div class="modal fade" id="instalacionModal" tabindex="-1" aria-labelledby="instalacionModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalAgregar" tabindex="-1" aria-labelledby="modalAgregarLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="instalacionModalLabel">Ingreso de registro</h5>
+                    <h5 class="modal-title" id="modalAgregarLabel">Ingreso de registro</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -185,7 +81,7 @@
                         <div class="form-group mb-3">
                             <label for="selectFecha">Fecha mantenimiento</label>
                             <div class="input-group date dateSelector">
-                                <input type="text" class="form-control" id="fechaIngreso" placeholder="Ingrese la fecha">
+                                <input type="text" class="form-control" id="fecha" placeholder="Seleccione fecha de ingreso a mantenimiento">
                                 <span class="input-group-append">
                                     <span class="input-group-text d-block">
                                         <i class="fa fa-th" aria-hidden="true"></i>
@@ -196,30 +92,30 @@
                         <!-- KILOMETRAJE -->
                         <div class="form-group mb-3">
                             <label for="kilometraje">Kilometraje</label>                    
-                            <input type="number" id="kilometraje" class="form-control" placeholder="Kilometros recorridos">                            
+                            <input type="number" id="kilometraje" class="form-control" placeholder="Kilometraje previo al mantenimiento">                            
                         </div>
                         <!-- TIPO MANTENIMIENTO -->
                         <div class="form-group mb-3 row">
                             <label for="tipoMantenimiento">Tipo de mantenimiento</label>
                             <div> 
-                                <input type="radio" class="btn-check" name="options-outlined" id="preventivo" onclick="desplegar(0)" autocomplete="off" checked>
+                                <input type="radio" class="btn-check" name="options-outlined" id="preventivo" value="preventivo" onclick="desplegar(0)" autocomplete="off">
                                 <label class="btn btn-outline-success" for="preventivo">Preventivo</label>
 
-                                <input type="radio" class="btn-check" name="options-outlined" id="correctivo" onclick="desplegar(1)" autocomplete="off">
+                                <input type="radio" class="btn-check" name="options-outlined" id="correctivo" value="correctivo" onclick="desplegar(1)" autocomplete="off" checked>
                                 <label class="btn btn-outline-danger" for="correctivo">Correctivo</label>
                                 
-                                <div class="form-check mt-1" id="opcionesPreventivo">
-                                    <input class="form-check-input" type="checkbox" value="" id="llantas">
+                                <div class="form-check mt-1" id="opcionesPreventivo" style="display: none;">
+                                    <input class="form-check-input valores" name="tipos" value="llantas" type="checkbox" value="llantas" id="tipos">
                                     <label class="form-check-label" for="llantas">
                                       Llantas
                                     </label>
                                     <br>
-                                    <input class="form-check-input" type="checkbox" value="" id="frenos">
+                                    <input class="form-check-input valores" name="tipos" value="frenos" type="checkbox" value="frenos" id="tipos">
                                     <label class="form-check-label" for="frenos">
                                       Frenos
                                     </label>
                                     <br>
-                                    <input class="form-check-input" type="checkbox" value="" id="aceite">
+                                    <input class="form-check-input valores" name="tipos" value="aceite" type="checkbox" value="aceite" id="tipos">
                                     <label class="form-check-label" for="aceite">
                                       Aceite
                                     </label>
@@ -230,28 +126,28 @@
                         <!-- TALLER -->
                         <div class="form-group mb-3">
                             <label for="tallerName">Taller</label>                    
-                            <input type="text" id="taller" class="form-control" placeholder="Ingrese el nombre del taller">                            
+                            <input type="text" id="nombretaller" class="form-control" placeholder="Nombre del taller">                            
                         </div>
                         <!-- COSTO MANTENIMIENTO -->
                         <div class="form-group mb-3">
                             <label for="costoMantenimiento">Precio mantenimiento</label>                    
-                            <input type="number" id="mantenimiento" class="form-control" placeholder="Costo total del mantenimiento">                            
+                            <input type="number" id="costoMantenimiento" class="form-control" placeholder="Costo total del mantenimiento">                            
                         </div>
                         <!-- COSTO REPUESTOS -->
                         <div class="form-group mb-3">
                             <label for="costoRepuestos">Precio repuestos</label>                    
-                            <input type="number" id="repuestos" class="form-control" placeholder="Costo total de los repuestos">                            
+                            <input type="number" id="costoRepuestos" class="form-control" placeholder="Costo total de los repuestos">                            
                         </div>
                         <!-- OBSERVACIONES -->
                         <div class="form-group mb-3">
                           <label for="observaciones">Observaciones</label>
-                          <textarea id="observaciones" class="form-control" rows="3"></textarea>
+                          <textarea id="observaciones" class="form-control" rows="3" placeholder="Si tiene una observación aquí es el lugar para agregarla..."></textarea>
                         </div>
                     </form>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cerrar</button>
-                    <button type="submit" class="btn btn-success">Enviar</button>
+                    <button type="button" class="btn btn-success" id="btnEnvio" onclick="sendJSON(),loadXMLDoc()">Enviar</button>
                 </div>
             </div>
         </div>
